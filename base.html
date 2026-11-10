@@ -10,25 +10,25 @@
 :root{--bg:#1d1838;--bg2:#272049;--ink:#f3f1fa;--soft:#b9b3d3;--line:rgba(255,255,255,.12);--orange:#F07F0F}
 *{box-sizing:border-box;margin:0}
 html,body{height:100%}
-body{font-family:Lexend,"Segoe UI",system-ui,sans-serif;color:var(--ink);background:radial-gradient(1200px 700px at 72% 50%,#2e2658 0%,var(--bg) 60%);line-height:1.55;font-size:15px;overflow-x:hidden}
-.page{display:grid;grid-template-columns:minmax(340px,1fr) 1.6fr;height:100vh}
-aside.intro{padding:32px 20px 32px 44px;display:flex;flex-direction:column;gap:26px;justify-content:center;max-width:470px}
-aside.intro img{height:24px;width:auto;align-self:flex-start;opacity:.9}
-h1{font-weight:600;font-size:clamp(38px,4.6vw,60px);letter-spacing:-.03em;line-height:1}
-.lead{color:var(--soft);font-weight:300;max-width:42ch;margin-top:12px}
-.kicker{font-size:15px;font-weight:400;letter-spacing:0;line-height:1.3;color:var(--soft);margin-bottom:6px}
+body{font-family:Lexend,"Segoe UI",system-ui,sans-serif;color:var(--ink);background:radial-gradient(1200px 700px at 72% 50%,#2e2658 0%,var(--bg) 60%);line-height:1.55;font-size:17px;overflow-x:hidden}
+.page{display:grid;grid-template-columns:minmax(380px,1fr) 1.25fr;height:100vh}
+aside.intro{padding:32px 24px 32px clamp(32px,4vw,64px);display:flex;flex-direction:column;gap:30px;justify-content:center}
+aside.intro img{height:30px;width:auto;align-self:flex-start;opacity:.9}
+h1{font-weight:600;font-size:clamp(40px,4.4vw,76px);letter-spacing:-.03em;line-height:1;white-space:nowrap}
+.lead{color:var(--soft);font-weight:300;max-width:60ch;margin-top:14px;font-size:clamp(16px,1.15vw,20px)}
+.kicker{font-size:clamp(16px,1.15vw,20px);font-weight:400;letter-spacing:0;line-height:1.3;color:var(--soft);margin-bottom:6px}
 .hint{margin-top:10px;min-height:2.6em}
 .guide{border-top:1px solid var(--line);padding-top:20px}
-.guide h2{font-size:14px;font-weight:500;margin-bottom:12px}
-.guide ul{list-style:none;padding:0;display:grid;gap:12px}
-.guide li{display:grid;grid-template-columns:30px 1fr;gap:12px;font-size:13px;color:var(--soft);font-weight:300;line-height:1.45}
-.guide li svg{width:30px;height:30px;padding:6px;border-radius:9px;background:rgba(255,255,255,.07);color:var(--orange)}
+.guide h2{font-size:clamp(16px,1.1vw,19px);font-weight:500;margin-bottom:16px}
+.guide ul{list-style:none;padding:0;display:grid;gap:16px;max-width:70ch}
+.guide li{display:grid;grid-template-columns:38px 1fr;gap:14px;font-size:clamp(14px,1vw,17px);color:var(--soft);font-weight:300;line-height:1.45}
+.guide li svg{width:38px;height:38px;padding:8px;border-radius:9px;background:rgba(255,255,255,.07);color:var(--orange)}
 .guide b{color:var(--ink);font-weight:500}
 .filters{display:flex;gap:8px;flex-wrap:wrap}
-.filters button{font:inherit;font-size:13px;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:999px;padding:7px 14px;cursor:pointer}
+.filters button{font:inherit;font-size:15px;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:999px;padding:9px 18px;cursor:pointer}
 .filters button[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
 .filters button:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
-.hint{font-size:12.5px;color:var(--soft);font-weight:300}
+.hint{font-size:clamp(14px,.95vw,16px);color:var(--soft);font-weight:300;max-width:70ch}
 .stage{position:relative;display:grid;place-items:center;padding:12px;min-height:0}
 svg.orbit{width:100%;height:100%;max-height:calc(100vh - 24px);overflow:visible}
 .ring{fill:none;stroke:var(--line);stroke-dasharray:2 6}
@@ -36,8 +36,8 @@ svg.orbit{width:100%;height:100%;max-height:calc(100vh - 24px);overflow:visible}
 .node{cursor:pointer;transition:opacity .3s}
 .node circle.b{fill:var(--bg2);stroke-width:2.5;transition:r .25s,fill .25s}
 .node .ic{color:#fff}
-.node text{font:400 13px Lexend,sans-serif;fill:var(--ink)}
-.node text.r{font-size:10.5px;fill:var(--soft);font-weight:300}
+.node text{font:400 15px Lexend,sans-serif;fill:var(--ink)}
+.node text.r{font-size:12px;fill:var(--soft);font-weight:300}
 .node:hover circle.b,.node:focus-visible circle.b,.node.on circle.b{fill:currentColor}
 .node:focus{outline:none}
 .node.dim{opacity:.18}
@@ -70,7 +70,7 @@ svg.orbit{width:100%;height:100%;max-height:calc(100vh - 24px);overflow:visible}
     <img id="logo" alt="EOS Solutions">
     <div>
       <h1 id="ttl">PowerSuite</h1>
-      <p class="lead" id="lead">Benvenuto. Questa app raccoglie i report PowerSuite per Business Central: seleziona un modulo per vedere quali report contiene.</p>
+      <p class="lead" id="lead">Benvenuti e benvenute. Questa app raccoglie i report PowerSuite per Business Central: seleziona un modulo per vedere quali report contiene.</p>
     </div>
     <div id="filt">
       <div class="filters" role="group" aria-label="Mostra moduli">
@@ -86,7 +86,7 @@ svg.orbit{width:100%;height:100%;max-height:calc(100vh - 24px);overflow:visible}
     </div>
   </aside>
   <main class="stage">
-    <svg class="orbit" viewBox="0 0 800 800" id="orbit" role="group" aria-label="Moduli PowerSuite"></svg>
+    <svg class="orbit" viewBox="30 45 740 735" id="orbit" role="group" aria-label="Moduli PowerSuite"></svg>
   </main>
 </div>
 <div class="drawer" id="drawer" role="dialog" aria-modal="false" aria-labelledby="dh" aria-hidden="true"></div>
@@ -192,8 +192,8 @@ MODS.forEach(m=>{const [x,y]=pos[m.id], r=NR[m.tier], k=r/40*26;
   s+=`<g class="node" data-id="${m.id}" data-t="${m.tier}" tabindex="0" role="button" aria-label="${m.name}" style="color:${m.color}">
    <circle class="b" cx="${x}" cy="${y}" r="${r}" stroke="${m.color}"/>
    <svg class="ic" x="${x-k/2}" y="${y-k/2}" width="${k}" height="${k}" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${ICONS[m.icon]}</svg>
-   <text x="${x}" y="${y+r+20}" text-anchor="middle">${m.name}</text>
-   ${m.req?`<text class="r" x="${x}" y="${y+r+35}" text-anchor="middle">${m.req}</text>`:''}</g>`});
+   <text x="${x}" y="${y+r+22}" text-anchor="middle">${m.name}</text>
+   ${m.req?`<text class="r" x="${x}" y="${y+r+39}" text-anchor="middle">${m.req}</text>`:''}</g>`});
 orbit.innerHTML=s;
 
 const nodes=[...document.querySelectorAll('.node')];
